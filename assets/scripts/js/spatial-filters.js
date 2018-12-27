@@ -76,7 +76,7 @@ document.getElementById('laplacian').onclick = function() {
   let src = cv.imread('imageSrc');
   let dst = new cv.Mat();
   cv.cvtColor(src, src, cv.COLOR_RGBA2RGB, 0);
-  cv.Laplacian(src, dst, cv.CV_8U, 1, 1, 0, cv.BORDER_DEFAULT);
+  cv.Laplacian(src, dst, cv.CV_8U, 1, 1, 1, cv.BORDER_DEFAULT);
   cv.imshow('outputCanvas3', dst);
   src.delete();
   dst.delete();
