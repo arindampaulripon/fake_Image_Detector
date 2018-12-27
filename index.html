@@ -7,31 +7,32 @@
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <title>OpenCV.js WebApp</title>
+    <title>Fake Image Detector Application</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    <form action="https://metadataviewer.herokuapp.com/" class="form-horizontal">
-        <div class="form-group form-group-sm">
-            <label for="img" class="col-md-2 control-label">Image's URL:</label>
-            <div class="col-md-8">
-                <input class="form-control" type="text" name="img" value="">
-            </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-default">Check metadata</button>
-            </div>
-        </div>
-    </form>
-    <script async="" src="./Image metadata viewer_files/f(3).txt"></script>
-    <p style = "text-align: center; font-size: 200%;">Upload an image to see details Informations.</p>
+    
+    
+    <p style = "text-align: center; font-size: 200%;">Upload any image from your device to see details Informations.</p>
     <br/>
     <div style = "background-color: cornflowerblue; background-position: center">
         <input id="file-input" type="file" />
     </div>
-    
+    <p style = "text-align: center; font-size: 200%;">You can paste any image link below :</p>
+    <form action="https://metadataviewer.herokuapp.com/" target="_blank" class="form-horizontal">
+        <div class="form-group form-group-sm">
+            <label for="img" class="col-md-2 control-label"><b>Image's URL:</b></label>
+            <div class="col-md-8">
+                <input class="form-control" type="text" name="img" value="">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-default">Check Metadata</button>
+            </div>
+        </div>
+    </form>
     
     <div style="text-align:center; font-size:150%;color: darkseagreen">
     <pre  id="pp"></pre>    
@@ -148,35 +149,48 @@
       </div>
     <div class="dropdown">
 >
-      
-       <button id="blur">Blur (Average)</button><br/>
-       <button id="gaussian">Gaussian Blur</button><br/>
-       <button id="median">Median Blur</button><br/>
-       <button id="bilateral">Bilateral Filter</button><br/>
-       <button id="laplacian">Laplacian</button><br/>
-       <button id="sobelX">Sobel X</button><br/>
-       <button id="sobelY">Sobel Y</button><br/>
-       <button id="edge">Edges</button><br/>
-       <button id="houg">H Line</button><br/>
+        <p><b>Bluring image</b></p>
+       <button id="blur" class="btn btn-default">Blur (Average)</button>
+        <p><b>For applying gaussian blur</b></p>
+       <button id="gaussian" class="btn btn-default" >Gaussian Blur</button>
+        <p><b>For applying median blur</b></p>
+       <button id="median" class="btn btn-default">Median Blur</button>
+        <p><b>For applying Bilateral Filter</b></p>
+       <button id="bilateral" class="btn btn-default">Bilateral Filter</button>
+        <p style="color: darkseagreen"><b>For applying Laplacian Transformation</b></p>
+       <button id="laplacian" class="btn btn-default">Laplacian</button>
+        <p style="color: darkseagreen"><b>For Sobel derivetives of X </b></p>
+       <button id="sobelX" class="btn btn-default">Sobel X</button>
+        <p style="color: darkseagreen"><b>For Sobel derivetives of Y </b></p>
+       <button id="sobelY" class="btn btn-default">Sobel Y</button><br/>
+        <p style="color: darkseagreen"><b>For detecting Canny Edges </b></p>
+       <button id="edge" class="btn btn-default">Edges</button>
+        <p style="color: darkseagreen"><b>For detecting Canny Edges (higher threshold) </b></p>
+       <button id="houg" class="btn btn-default">Canny Edges (higher threshold)</button>
+        
     </div>
+      
+
+
       <div class="col-md-6">
+          <p><b>Sobel Derivatives</b></p>
         <img id="blankCanvas" src="assets/img/blankCanvas.png" style="display:none;">
         <canvas id="outputCanvas"></canvas>
       </div>
     <div class="col-md-6">
-        <p>Intensity Based Edges</p>
+        <p><b>Intensity Based Edges</b></p>
         <img id="blankCanvas" src="assets/img/blankCanvas.png" style="display:none;">
         <canvas id="outputCanvas2"></canvas>
       </div>
         
     <div class="col-md-6">
-        <p>Laplacian</p>
+        <p><b>Gradient Image( Magnitude)</b></p>
         <img id="blankCanvas" src="assets/img/blankCanvas.png" style="display:none;">
         <canvas id="outputCanvas3"></canvas>
     </div>
             
     <div class="col-md-6">
-        <p>Houg</p>
+        <p><b>Canny Edges (higher threshold)</b></p>
         <img id="blankCanvas" src="assets/img/blankCanvas.png" style="display:none;">
         <canvas id="outputCanvas4"></canvas>
     </div>
