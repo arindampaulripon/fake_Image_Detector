@@ -91,7 +91,7 @@ document.getElementById('sobelX').onclick = function() {
   let src = cv.imread('imageSrc');
   let dstx = new cv.Mat();
   //convert to binary
-  cv.cvtColor(src, src, cv.COLOR_RGBA2RGB, 0);
+  cv.cvtColor(src, src, cv.COLOR_RGB2GRAY, 0);
   cv.Sobel(src, dstx, cv.CV_8U, 1, 0, 3, 1, 0, cv.BORDER_DEFAULT);
   cv.imshow('outputCanvas', dstx);
   src.delete();
