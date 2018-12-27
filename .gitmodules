@@ -1,0 +1,3 @@
+[submodule "jquery.lookingfor"]
+	path = jquery.lookingfor
+	url = https://github.com/albburtsev/jquery.lookingfor.git
