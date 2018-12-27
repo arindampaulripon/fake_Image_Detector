@@ -108,7 +108,7 @@ document.getElementById('sobelY').onclick = function() {
   let src = cv.imread('imageSrc');
   let dsty = new cv.Mat();
   //convert to binary
-  cv.cvtColor(src, src, cv.COLOR_RGB2GRAY, 0);
+  cv.cvtColor(src, src, cv.COLOR_RGBA2RGB, 0);
   cv.Sobel(src, dsty, cv.CV_8U, 0, 1, 3, 1, 0, cv.BORDER_DEFAULT);
 
   cv.imshow('outputCanvas', dsty);
@@ -126,7 +126,7 @@ document.getElementById('edge').onclick = function() {
   let dst = new cv.Mat();
   cv.cvtColor(src, src, cv.COLOR_RGB2GRAY, 0);
 // You can try more different parameters
-  cv.Canny(src, dst, 150, 250, 3, cv.BORDER_DEFAULT);
+  cv.Canny(src, dst, 128, 255, 3, cv.BORDER_DEFAULT);
   cv.imshow('outputCanvas2', dst);
   src.delete();
   dst.delete();
