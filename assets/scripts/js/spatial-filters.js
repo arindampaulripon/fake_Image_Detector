@@ -144,7 +144,7 @@ document.getElementById('houg').onclick = function() {
   let dst = new cv.Mat();
   cv.cvtColor(src, src, cv.COLOR_RGB2GRAY, 0);
 // You can try more different parameters
-  cv.Canny(src, dst, 100, 255, 3, cv.BORDER_DEFAULT);
+  cv.Canny(src, dst, 180, 255, 3, cv.BORDER_DEFAULT);
   
   cv.imshow('outputCanvas4', dst);
   
