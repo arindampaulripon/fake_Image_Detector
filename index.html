@@ -8,12 +8,180 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Fake Image Detector Application</title>
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>jQuery UI Autocomplete - Default functionality</title>
+    <script>
+  $( function() {
+    var availableTags = [
+"https://bdpolitico.com/ , S",
+"http://pagenews24.com/, S",
+"https://reportbd24.com/, S",
+"http://www.rarenews24.com/, S",
+"http://bnpnews24.com/, S",
+"https://www.prothombangladesh.net/, S",
+"http://dailyamardesh.xyz/, S",
+"http://dnn.news/, S",
+"http://www.razniti24.com/, S",
+"http://www.rbn24.co.uk/, S",
+"http://www.sangbad247.com/, S",
+"http://deshbhabona.com/, S",
+"http://amardesh247.com/, S",
+"http://www.analysisbd.com/, S",
+"https://www.awaazbd.com/, S",
+"http://www.badrul.org/, S",
+"http://bnponlinewing.com/, S",
+"http://en.bnpbangladesh.com/, S",
+"http://bnpbangladesh.com/, S",
+"http://bnponlinewing.com/, S",
+"http://banglamail71.info/, S",
+"http://www.atv24bd.com/, S",
+"https://www.banglastatus.com/, S",
+"http://www.bbarianews24.com/, S",
+"http://sheershanews24.com/, S",
+"http://shibir.org.bd/, S",
+"http://news21-bd.com/, S",
+"https://www.1newsbd.net/, S",
+"http://newsbd71.com/, S",
+"http://poriborton.com/, S",
+"http://www.justnewsbd.com/, S",
+"http://www.expressnewsbd.com/, S",
+"http://dailybdtimes.com/, S",
+"http://www.mymensinghnews24.com/, S",
+"http://www.muldharabd.com/, S",
+"https://www.priyo.com/, S",
+"http://cnnbd24.com/, S",
+"http://www.dailymirror24.com/, S",
+"http://www.deshnetricyberforum.com/     , S",
+"http://www.alapon.live/    , S",
+"http://www.dhakatimes24.com/    , S",
+"http://risingbd.com/, S",
+"https://diganta.net/ , S",
+"http://www.moralnews24.com/  , S",
+"http://www.potryka.com/, S",
+"https://dawahilallah.com/, S",
+"https://alehsar2.wordpress.com/   , S",
+"https://aljamaah1.wordpress.com/     , S",
+"https://bangladarsulquran.wordpress.com/      , S",
+"http://gazwah.net/, S",
+"https://jongimedia.wordpress.com/   , S",
+"https://maktabatulislamiabd.wordpress.com/   , S",
+"https://millateibrahimbd.wordpress.com/, S",
+"https://myquranstudyoneayahaday.com/  , S",
+"https://shuhadarkafela.wordpress.com/, S",
+"https://defenseupdatebangladesh.wordpress.com/, S",
+"https://www.defbd.com/, S",
+"https://bangladeshdefence.blogspot.com/, S",
+"https://www.prothomalo.com, A",
+"http://www.ittefaq.com.bd, A",
+"https://www.bn.bangla.report, A",
+"http://bangla.samakal.net/, A",
+"http://dainikamadershomoy.com, A",
+"http://www.dailynayadiganta.com, A",
+"http://www.kalerkantho.com, A",
+"http://www.jjdin.com/, A",
+"http://www.bd-pratidin.com, A",
+"http://m.dailyinqilab.com, A",
+"http://www.m.mzamin.com, A",
+"http://www.dailysangram.com, A",
+"http://www.bhorerkagoj.com, A",
+"http://web.dailyjanakantha.com, A",
+"https://www.jugantor.com, A",
+"http://www.24livenewspaper.com, A",
+"http://www.bd-journal.com, A",
+"http://www.gonokantho.com, A",
+"http://bonikbarta.net/bangla/, A",
+"http://amaderorthoneeti.com/new/, A",
+"http://bhorer-dak.com, A",
+"http://www.dailydinkal.net/, A",
+"http://www.manobkantha.com/, A",
+"http://www.alokitobangladesh.com/, A",
+"https://www.banglanews24.com/english, A",
+"https://m.bdnews24.com, A",
+"http://www.bssnews.net, A",
+"http://www.dailyasianage.com/, A",
+"http://www.daily-sun.com, A",
+"http://www.dhakatribune.com, A",
+"http://energybangla.com, A",
+"http://www.newagebd.net, A",
+"http://www.bangladeshmonitor.com.bd, A",
+"http://thebangladeshtoday.com, A",
+"https://www.thedailystar.net, A",
+"https://thefinancialexpress.com.bd, A",
+"http://www.thegoodmorning.net, A",
+"http://m.theindependentbd.com, A",
+"http://m.thedailynewnation.com, A",
+"http://www.newstoday.com.bd, A",
+"http://bm.thereport24.com/, A",
+"http://www.unbnews.org, A",
+"http://www.observerbd.com, A",
+"https://www.bbc.com/bengali, A",
+"www.bangladesherkhabor.net, A",
+"ajkerbazzar.com/, A",
+"ajkerpatrika.com, A",
+"khabarpatrabd.com, A",
+"dailyvorerpata.com, A",
+"rtvonline.com, A",
+"dailyagnishikha.com, A",
+"dhakardak-bd.com, A",
+"natun-barta.com, A",
+"dailybartoman.com, A",
+"bhorerdhani.com, A",
+"ajkalerkhobor.com, A",
+"sangbadkonika.com, A",
+"dainikdestiny.com, A",
+"sorejominbarta.com, A",
+"dailyniropekkha.com, A",
+"arthoniteerkagoj.com, A",
+"somoyerkantha.com, A",
+"ekattor.tv, A",
+"http://www.channel24bd.tv/, A",
+"atnislamic.tv, A",
+"http://aldawah.tv/, A",
+"bangl21.tv, A",
+"http://www.atnbangla.tv/, A",
+"https://www.atnnewstv.com/, A",
+"https://banglavision.tv/, A",
+"https://www.channelionline.com/, A",
+"http://www.btv.gov.bd/, A",
+"http://www.channelninebd.tv/, A",
+"https://www.gtvlivebd.com/?m=1, A",
+"http://m.ntvbd.com/, A",
+"http://www.independent24.tv/, A",
+"https://www.jamuna.tv/, A",
+"http://www.dailyvoreralo.com/, A",      
+"news24bd.tv, A"
+
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
+
 </head>
 <body>
+    
+        <h1 style = "text-align: center; font-size: 500%;">News Portal and News Source Checker</h1>
+        <p style = "text-align: center; font-size: 200%;">Here you can verify that if any news is real or fake.</p>
+        <p style = "text-align: center; font-size: 200%;">We've made a database based on their previous journalism . But it's not any verified database by any government or authentic source . This database will be updated regularly based on each and every journal and news paper's journalism standard. </p>
+        <h2 style = "font-size: 200%;">How to check </h2>
+        <p> 1. Enter any news link bellow.</p>
+        <p>2. If our database contaings that website link then you will see another single Letter "S" or "A" on the right side of the link </p>
+        <p>S = Spam News Site / Should no be trusted without knowing more</p>
+        <p>A = Authentic/ Can be trusted without any hesitation. </p>
+        <div style = "text-align: center; font-size: 200%;">
+            <label for="tags">Tags: </label>
+            <input id="tags">
+        </div>
+ 
     
     
     <p style = "text-align: center; font-size: 200%;">Upload any image from your device to see details Informations.</p>
@@ -209,6 +377,9 @@
     <script src="assets/scripts/js/util.js" type="text/javascript"></script>
     <script src="assets/scripts/js/spatial-filters.js" type="text/javascript"></script>
     <div class="modal"></div>
+    
+    
+
 
 </body>
 </html>
